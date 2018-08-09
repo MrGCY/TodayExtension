@@ -12,7 +12,9 @@
 #define identifierTodayItemCell @"TodayItemCell"
 #define NewHeight 400
 @interface TodayViewController () <NCWidgetProviding,UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, copy) NSArray * dataArray;
 @end
 
@@ -59,7 +61,9 @@
     // If an error is encountered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
-
+     // 取出数据
+     NSString * myData = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.mrgcy.appExtension"] valueForKey:@"myShareData"];
+     self.titleLabel.text = myData ? myData : @"你好世界";
     completionHandler(NCUpdateResultNewData);
 }
 - (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize  API_AVAILABLE(ios(10.0)){
