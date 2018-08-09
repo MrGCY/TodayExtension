@@ -20,6 +20,15 @@
      return YES;
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+     // 可以先回到应用首页，在跳转
+     if ([url.absoluteString hasPrefix:@"TodayExtensionDemo"]) {
+          if ([url.absoluteString hasSuffix:@"touch"]) {
+               NSLog(@"点击了一下");
+          }
+     }
+     return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
      // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

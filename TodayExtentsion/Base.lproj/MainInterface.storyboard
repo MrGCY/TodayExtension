@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="NxP-tO-DET">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Cf-Ws-nu4"/>
+                                    <constraint firstAttribute="width" constant="50" id="Tnm-K5-Qsn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你好，世界" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="622-lj-KGc">
+                                <rect key="frame" x="87" y="20" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="dEJ-A9-vHy">
+                                <rect key="frame" x="20" y="80" width="280" height="290"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NxP-tO-DET" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" id="6PF-XZ-mja"/>
+                            <constraint firstItem="NxP-tO-DET" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="CeV-P0-DLy"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="dEJ-A9-vHy" secondAttribute="trailing" constant="20" id="P59-cc-BJO"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="dEJ-A9-vHy" secondAttribute="bottom" constant="30" id="Uu2-xl-34E"/>
+                            <constraint firstItem="dEJ-A9-vHy" firstAttribute="top" secondItem="NxP-tO-DET" secondAttribute="bottom" constant="10" id="a86-H3-I02"/>
+                            <constraint firstItem="dEJ-A9-vHy" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="fg6-dl-a6i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.19999999999999" y="133.13343328335833"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo1" width="1024" height="681"/>
+    </resources>
+</document>
