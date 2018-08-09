@@ -32,23 +32,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="dEJ-A9-vHy">
-                                <rect key="frame" x="20" y="80" width="280" height="290"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAg-AT-7P2">
+                                <rect key="frame" x="20" y="80" width="280" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="6iw-MB-TtP"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="yaJ-wo-ZQI"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NxP-tO-DET" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" id="6PF-XZ-mja"/>
                             <constraint firstItem="NxP-tO-DET" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="CeV-P0-DLy"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="dEJ-A9-vHy" secondAttribute="trailing" constant="20" id="P59-cc-BJO"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="dEJ-A9-vHy" secondAttribute="bottom" constant="30" id="Uu2-xl-34E"/>
-                            <constraint firstItem="dEJ-A9-vHy" firstAttribute="top" secondItem="NxP-tO-DET" secondAttribute="bottom" constant="10" id="a86-H3-I02"/>
-                            <constraint firstItem="dEJ-A9-vHy" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="fg6-dl-a6i"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="KAg-AT-7P2" secondAttribute="bottom" constant="20" id="Tof-wO-Jc8"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="KAg-AT-7P2" secondAttribute="trailing" constant="20" id="Vqx-Tr-gbm"/>
+                            <constraint firstItem="KAg-AT-7P2" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="aD1-ia-p2E"/>
+                            <constraint firstItem="KAg-AT-7P2" firstAttribute="top" secondItem="NxP-tO-DET" secondAttribute="bottom" constant="10" id="rD7-ba-Wib"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="400"/>
+                    <connections>
+                        <outlet property="tableView" destination="KAg-AT-7P2" id="4GP-cb-0Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

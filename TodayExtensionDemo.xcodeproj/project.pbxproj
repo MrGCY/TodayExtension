@@ -20,6 +20,10 @@
 		41E4B177211BE497000B5037 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E4B175211BE497000B5037 /* MainInterface.storyboard */; };
 		41E4B17B211BE497000B5037 /* TodayExtentsion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 41E4B16D211BE496000B5037 /* TodayExtentsion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		41E4B187211BEBA0000B5037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E4B140211BE3F8000B5037 /* Assets.xcassets */; };
+		41E4B18B211C1940000B5037 /* TodayItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E4B189211C193F000B5037 /* TodayItemCell.m */; };
+		41E4B18C211C1940000B5037 /* TodayItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E4B18A211C193F000B5037 /* TodayItemCell.xib */; };
+		41E4B190211C200C000B5037 /* CYSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E4B18E211C200B000B5037 /* CYSubViewController.m */; };
+		41E4B191211C200C000B5037 /* CYSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E4B18F211C200B000B5037 /* CYSubViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,12 @@
 		41E4B178211BE497000B5037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41E4B185211BEAD8000B5037 /* TodayExtensionDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtensionDemo.entitlements; sourceTree = "<group>"; };
 		41E4B186211BEB16000B5037 /* TodayExtentsion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtentsion.entitlements; sourceTree = "<group>"; };
+		41E4B188211C193F000B5037 /* TodayItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayItemCell.h; sourceTree = "<group>"; };
+		41E4B189211C193F000B5037 /* TodayItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayItemCell.m; sourceTree = "<group>"; };
+		41E4B18A211C193F000B5037 /* TodayItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayItemCell.xib; sourceTree = "<group>"; };
+		41E4B18D211C200B000B5037 /* CYSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYSubViewController.h; sourceTree = "<group>"; };
+		41E4B18E211C200B000B5037 /* CYSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYSubViewController.m; sourceTree = "<group>"; };
+		41E4B18F211C200B000B5037 /* CYSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CYSubViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +166,9 @@
 				41E4B142211BE3F8000B5037 /* LaunchScreen.storyboard */,
 				41E4B145211BE3F8000B5037 /* Info.plist */,
 				41E4B146211BE3F8000B5037 /* main.m */,
+				41E4B18D211C200B000B5037 /* CYSubViewController.h */,
+				41E4B18E211C200B000B5037 /* CYSubViewController.m */,
+				41E4B18F211C200B000B5037 /* CYSubViewController.xib */,
 			);
 			path = TodayExtensionDemo;
 			sourceTree = "<group>";
@@ -194,6 +207,9 @@
 				41E4B173211BE497000B5037 /* TodayViewController.m */,
 				41E4B175211BE497000B5037 /* MainInterface.storyboard */,
 				41E4B178211BE497000B5037 /* Info.plist */,
+				41E4B188211C193F000B5037 /* TodayItemCell.h */,
+				41E4B189211C193F000B5037 /* TodayItemCell.m */,
+				41E4B18A211C193F000B5037 /* TodayItemCell.xib */,
 			);
 			path = TodayExtentsion;
 			sourceTree = "<group>";
@@ -335,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E4B144211BE3F8000B5037 /* LaunchScreen.storyboard in Resources */,
+				41E4B191211C200C000B5037 /* CYSubViewController.xib in Resources */,
 				41E4B141211BE3F8000B5037 /* Assets.xcassets in Resources */,
 				41E4B13F211BE3F0000B5037 /* Main.storyboard in Resources */,
 			);
@@ -360,6 +377,7 @@
 			files = (
 				41E4B187211BEBA0000B5037 /* Assets.xcassets in Resources */,
 				41E4B177211BE497000B5037 /* MainInterface.storyboard in Resources */,
+				41E4B18C211C1940000B5037 /* TodayItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E4B13C211BE3F0000B5037 /* ViewController.m in Sources */,
+				41E4B190211C200C000B5037 /* CYSubViewController.m in Sources */,
 				41E4B147211BE3F8000B5037 /* main.m in Sources */,
 				41E4B139211BE3F0000B5037 /* AppDelegate.m in Sources */,
 			);
@@ -396,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E4B18B211C1940000B5037 /* TodayItemCell.m in Sources */,
 				41E4B174211BE497000B5037 /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

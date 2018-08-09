@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import "CYSubViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,20 +17,46 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-     // Override point for customization after application launch.
+     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+     self.window.backgroundColor = [UIColor whiteColor];
+     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+     [self.window makeKeyAndVisible];
      return YES;
 }
-
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
      // 可以先回到应用首页，在跳转
      if ([url.absoluteString hasPrefix:@"TodayExtensionDemo"]) {
-          if ([url.absoluteString hasSuffix:@"touch"]) {
-               NSLog(@"点击了一下");
+          if ([url.absoluteString hasSuffix:@"enterApp"]) {
+               //进入APP
+          }else if ([url.absoluteString hasSuffix:@"feedback"]) {
+               //进入反馈
+               [self jumpSubVCWithNameTitle:@"反馈"];
+          }else if ([url.absoluteString hasSuffix:@"userInfo"]) {
+               //进入个人用户信息
+               [self jumpSubVCWithNameTitle:@"个人信息"];
+          }else if ([url.absoluteString hasSuffix:@"customerService"]) {
+               //进入客服
+               [self jumpSubVCWithNameTitle:@"客服"];
+          }else if ([url.absoluteString hasSuffix:@"set"]) {
+               //进入设置
+               [self jumpSubVCWithNameTitle:@"设置"];
+          }else if ([url.absoluteString hasSuffix:@"help"]) {
+               //进入帮助
+               [self jumpSubVCWithNameTitle:@"帮助"];
           }
      }
      return YES;
 }
-
+-(void)jumpSubVCWithNameTitle:(NSString *)nameTitle{
+     CYSubViewController * subVC = [CYSubViewController new];
+     subVC.title = nameTitle;
+     if ([self.window.rootViewController isKindOfClass:[UINavigationController class]]) {
+          UINavigationController * nav = (UINavigationController *)self.window.rootViewController;
+          [nav pushViewController:subVC animated:YES];
+     }else if ([self.window.rootViewController isKindOfClass:[ViewController class]]){
+          [self.window.rootViewController.navigationController pushViewController:subVC animated:YES];
+     }
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
      // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
