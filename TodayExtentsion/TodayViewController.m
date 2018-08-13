@@ -9,13 +9,15 @@
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "TodayItemCell.h"
+#import "TodayItemModel.h"
+
 #define identifierTodayItemCell @"TodayItemCell"
 #define NewHeight 400
 @interface TodayViewController () <NCWidgetProviding,UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (nonatomic, copy) NSArray * dataArray;
+@property (nonatomic, strong) NSMutableArray * dataArray;
 @end
 
 @implementation TodayViewController
@@ -40,13 +42,20 @@
 #pragma mark- lazy
 -(NSArray *)dataArray{
      if (!_dataArray) {
-          _dataArray = @[
+          NSArray * array = @[
                          @{@"icon":@"bangzhu",@"handerUrl":@"TodayExtensionDemo://help",@"title":@"帮助"},
                          @{@"icon":@"fankui",@"handerUrl":@"TodayExtensionDemo://feedback",@"title":@"反馈"},
                          @{@"icon":@"gerenxinxi",@"handerUrl":@"TodayExtensionDemo://userInfo",@"title":@"个人信息"},
                          @{@"icon":@"kefu",@"handerUrl":@"TodayExtensionDemo://customerService",@"title":@"客服"},
                          @{@"icon":@"shezhi",@"handerUrl":@"TodayExtensionDemo://set",@"title":@"设置"},
                          ];
+          _dataArray = [NSMutableArray arrayWithCapacity:array.count];
+          for (NSDictionary * dic in  array) {
+               TodayItemModel * model = [[TodayItemModel alloc] initWithDictionary:dic error:nil];
+               if (model) {
+                    [_dataArray addObject:model];
+               }
+          }
      }
      return _dataArray;
 }
@@ -84,15 +93,15 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
      TodayItemCell * cell = [tableView dequeueReusableCellWithIdentifier:identifierTodayItemCell];
-     NSDictionary * dic = self.dataArray[indexPath.row];
-     cell.iconImageView.image = [UIImage imageNamed:dic[@"icon"]];
-     cell.titleLabel.text = dic[@"title"];
+     TodayItemModel * model = self.dataArray[indexPath.row];
+     cell.iconImageView.image = [UIImage imageNamed:model.icon];
+     cell.titleLabel.text = model.title;
      return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      [tableView deselectRowAtIndexPath:indexPath animated:YES];
-     NSDictionary * dic = self.dataArray[indexPath.row];
+     TodayItemModel * model = self.dataArray[indexPath.row];
      //点击跳转到APP
-     [self.extensionContext openURL:[NSURL URLWithString:dic[@"handerUrl"]] completionHandler:nil];
+     [self.extensionContext openURL:[NSURL URLWithString:model.handerUrl] completionHandler:nil];
 }
 @end
