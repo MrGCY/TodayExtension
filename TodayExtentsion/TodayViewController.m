@@ -40,14 +40,15 @@
      }
 }
 #pragma mark- lazy
--(NSArray *)dataArray{
+-(NSMutableArray *)dataArray{
      if (!_dataArray) {
+          NSString *urlString = [NSString stringWithFormat:@"TodayExtensionDemo://set/markCode=%@&code=%@&yesclose=%@&stockName=%@",@"10200",@"200",@"YES",[@"高晨阳" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
           NSArray * array = @[
                          @{@"icon":@"bangzhu",@"handerUrl":@"TodayExtensionDemo://help",@"title":@"帮助"},
                          @{@"icon":@"fankui",@"handerUrl":@"TodayExtensionDemo://feedback",@"title":@"反馈"},
                          @{@"icon":@"gerenxinxi",@"handerUrl":@"TodayExtensionDemo://userInfo",@"title":@"个人信息"},
                          @{@"icon":@"kefu",@"handerUrl":@"TodayExtensionDemo://customerService",@"title":@"客服"},
-                         @{@"icon":@"shezhi",@"handerUrl":@"TodayExtensionDemo://set",@"title":@"设置"},
+                         @{@"icon":@"shezhi",@"handerUrl":urlString,@"title":@"设置"},
                          ];
           _dataArray = [NSMutableArray arrayWithCapacity:array.count];
           for (NSDictionary * dic in  array) {

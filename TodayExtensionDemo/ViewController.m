@@ -42,7 +42,7 @@
      [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.mrgcy.appExtension"] setValue:arr[index] forKey:@"myShareData"];
 }
 #pragma mark- lazy
--(NSArray *)dataArray{
+-(NSMutableArray *)dataArray{
      if (!_dataArray) {
           NSArray * array = @[
                               @{@"icon":@"bangzhu",@"handerUrl":@"TodayExtensionDemo://help",@"title":@"帮助"},
